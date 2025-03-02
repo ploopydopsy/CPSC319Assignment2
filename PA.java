@@ -61,7 +61,7 @@ class PA2 {
 
             // TODO (1.6)
             // Call printFinalOutput() to print and save the final formatted output (anagram groups).
-            printFinalOutput(anagramGroups, fileContents);
+            printFinalOutput(anagramGroups, inputFileName);
 
         } catch (Exception e) {  // Catch exceptions and handle errors.
             e.printStackTrace(); // Print stack trace for debugging.
