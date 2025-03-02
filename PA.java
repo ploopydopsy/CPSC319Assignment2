@@ -188,7 +188,7 @@ class PA2 {
 
             // TODO (1.29)
             // Print a confirmation message indicating successful file saving.
-            System.out.println("File saved to file \"" + outputFileName +"\" successfully");
+            System.out.println("Saved to file \"" + outputFileName +"\" successfully");
 
             // TODO (1.30)
             // Handle any IOException that may occur during file writing.
