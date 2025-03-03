@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 // ============================
-// TODO (1) MAIN CLASS (PA2)
+// MAIN CLASS (PA2)
 // ============================
 
 class PA2 {
@@ -215,17 +215,14 @@ class MergeSort {
     private static void merge(String[] array, int left, int mid, int right) {
         // Referred to CPSC 319 slides and google to learn how to make this algorithm
 
-        // TODO (2.6)
         // Compute the sizes of the two subarrays to be merged.
         int leftSize = mid - left + 1;
         int rightSize = right - mid;
 
-        // TODO (2.7)
         // Create temporary arrays to store elements from the left and right subarrays.
         String[] leftArray = new String[leftSize];
         String[] rightArray = new String[rightSize];
 
-        // TODO (2.8)
         // Copy data from the original array into the left and right subarrays.
         for (int i = 0; i < leftSize; i++) {
             leftArray[i] = array[left + i];
@@ -238,7 +235,6 @@ class MergeSort {
         System.out.println("( ................... )");
         System.out.println(" ∪ Merging: " + Arrays.toString(leftArray) + " and " + Arrays.toString(rightArray));
 
-        // TODO (2.9)
         // Merge the two subarrays by comparing their elements.
         int i = 0;
         int j = 0;
@@ -255,7 +251,6 @@ class MergeSort {
             k++;
         }
 
-        // TODO (2.10)
         // Copy any remaining elements from `leftArray` to `array`.
         while (i < leftSize) {
             array[k] = leftArray[i];
@@ -263,7 +258,6 @@ class MergeSort {
             k++;
         }
 
-        // TODO (2.11)
         // Copy any remaining elements from `rightArray` to `array`.
         while (j < rightSize) {
             array[k] = rightArray[j];
@@ -282,11 +276,9 @@ class MergeSort {
 
     private static void manualCopy(String[] source, int sourceStart, String[] destination, int destStart, int length) {
 
-        // TODO (2.12)
         // Iterate over the given range and copy elements
         for (int i = 0; i < length; i++) {
 
-            // TODO (2.13)
             // Copy each element from source to destination at the correct index
             destination[destStart + i] = source[sourceStart + i];
 
@@ -324,11 +316,9 @@ class SinglyLinkedList {
     // =====================================================
     public void addSorted(String word) {
 
-        // TODO (5.4)
         // Allocate new Node
         Node newNode = new Node(word);
 
-        // TODO (5.5)
         // Handle insertion at the beginning of the list:
         // If the list is empty (i.e., head == NULL) OR If word comes before head.data alphabetically
         if (head == null || word.compareTo(head.word) < 0) {
@@ -339,11 +329,9 @@ class SinglyLinkedList {
             return;
         }
 
-    // TODO (5.6)
     // Position 'current' at the beginning of the singly linked list
     Node current = head;
 
-    // TODO (5.7)
     // Traverse to find correct insertion point
     // Moves forward in the linked list until:
     // (1) The end of the list is reached (current.next == null).
@@ -353,13 +341,11 @@ class SinglyLinkedList {
         current = current.next;
     }
 
-    // TODO (5.8)
     // Insert the new node at the correct position
     newNode.next = current.next;
     current.next = newNode;
 	}
 
-// TODO (5.9)
 // Implement method to check if the list is empty
 public boolean isEmpty() {
     return head == null;
@@ -384,34 +370,27 @@ public boolean isEmpty() {
 // Convert the linked list to a formatted string representation
 public String toString() {
 
-    // TODO (5.10)
     // Initialize a StringBuilder to store the result
     StringBuilder result = new StringBuilder();
 
-    // TODO (5.11)
     // Start from the head of the linked list
     Node current = head;
 
-    // TODO (5.12)
     // Traverse the entire linked list
     while (current != null) { // ** YOUR CODE WHERE '?' **
 
-        // TODO (5.13)
         // Append the current node's data to the string
         result.append(current.word);
 
-        // TODO (5.14)
         // Add a space if there is another node after this
         if (current.next != null) {
             result.append(" ");
         }
 
-        // TODO (5.15)
         // Move to the next node in the list
         current = current.next;
     }
 
-    // TODO (5.16) Return the final formatted string
     return result.toString();
     }
 }
