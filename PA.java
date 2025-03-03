@@ -7,43 +7,41 @@ import java.util.*;
 
 class PA2 {
 
+    // ================================
+    // MAIN FUNCTION
+    // ================================
     public static void main(String[] args) {
         try {
-            // TODO (1.1)
+
             // Prompt the user to enter an input file name
             Scanner scanner = new Scanner(System.in);
             System.out.print("Please enter an input file name: ");
 
-            // Read the filename from standard input
-            String inputFileName = scanner.nextLine(); // ChatGPT used to learn syntax for prompting strings in java
+            // Read the filename from user's input
+            String inputFileName = scanner.nextLine(); // Google search used to learn syntax for prompting strings in java
 
             // Debugging: Print filename before reading (confirmation message)
             System.out.println();
             System.out.println("=============================================");
             System.out.println(" 📂  Reading input file: " + inputFileName);
 
-            // TODO (1.2)
-            // Read the input file and store its contents as a string.
+            // Read the selected file and store its contents as a string.
             String fileContents = readFile(inputFileName);
 
-            // If the file is empty or cannot be read, print an error message and terminate execution.
+            // If the file is empty (or cannot be read) print an error message and terminate execution.
             if (fileContents.isEmpty()) {
                 System.err.println("Error: File cannot be read or is empty.");
                 return;
             }
 
-            // TODO (1.3)
-            // Process input text to extract words into a 1-D array.
-            // Trim input, split words by whitespace, and store words in an array.
-
-            String[] words = fileContents.trim().split("\\s+");
+            // Process file content text and extract words into a 1-D array.
+            String[] words = fileContents.trim().split("\\s+"); // ".split" trims input, splitting words by whitespace, and storing words in an array.
 
             // Debugging: Print words before sorting
             System.out.println("---------------------------------------------");
             System.out.println(" ⊗  Words before sorting: " + Arrays.toString(words));
             System.out.println("---------------------------------------------");
 
-            // TODO (1.4)
             // Call MergeSort to sort words alphabetically.
             MergeSort.mergeSort(words, 0, words.length - 1);
 
@@ -51,7 +49,6 @@ class PA2 {
             System.out.println("*********************************************");
             System.out.println(" ✓ Words after sorting: " + Arrays.toString(words));
 
-            // TODO (1.5)
             // Call AnagramGrouper.groupAnagrams() to group words into singly linked lists (anagram groups).
             Map<String, SinglyLinkedList> anagramGroups = AnagramGrouper.groupAnagrams(words); // used ChatGPT to learn what a Map is and how it works
 
@@ -59,7 +56,6 @@ class PA2 {
             System.out.println("\n =============================================");
             System.out.println(" {} Grouped Anagrams: " + anagramGroups);
 
-            // TODO (1.6)
             // Call printFinalOutput() to print and save the final formatted output (anagram groups).
             printFinalOutput(anagramGroups, inputFileName);
 
@@ -74,49 +70,39 @@ class PA2 {
 
     private static String readFile(String fileName) throws IOException {
 
-        // TODO (1.7)
         // Create a File object for the given file name.
         File file = new File(fileName);
 
-        // TODO (1.8)
         // Check if the file exists before attempting to read.
-        if (!file.exists()) { // ** '?' replaced with file.exists() check **
+        if (!file.exists()) {
 
-            // TODO (1.9)
             // Print an error message if the file is not found.
             System.err.println("Error: File '" + fileName + "' not found.");
 
-            // TODO (1.10)
             // Return an empty string if the file doesn't exist.
             return "";
         }
 
-        // TODO (1.11)
-        // Use StringBuilder to store file contents.
+        // Use a StringBuilder to store file contents.
         StringBuilder fileContent = new StringBuilder();
 
-        // TODO (1.12)
-        // Use BufferedReader to read the file line by line.
+        // Use a BufferedReader to read the file line by line.
+        // ChatGPT used to explain how BufferedReader works
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
-        // TODO (1.13)
         // Declare a variable to store each line read from the file.
         String line;
 
-        // TODO (1.14)
         // Iterate through the file and read it line by line.
-        while ((line = reader.readLine()) != null) { // '?' replaced with 'reader.readLine()'
+        while ((line = reader.readLine()) != null) {
 
-            // TODO (1.15)
             // Append each line to StringBuilder.
             fileContent.append(line).append(" "); // Adds space between words
         }
 
-        // TODO (1.16)
         // Close BufferedReader.
         reader.close();
 
-        // TODO (1.17)
         // Return the final string containing the file content.
         return fileContent.toString().trim(); // Trim extra spaces
     }
@@ -127,41 +113,34 @@ class PA2 {
 
     public static void printFinalOutput(Map<String, SinglyLinkedList> groups, String inputFileName) {
 
-        // TODO (1.18)
         // Print a header for the final grouped anagrams output.
         System.out.println("\n=============================================");
         System.out.println("\n          Final Grouped Anagrams          ");
         System.out.println("\n=============================================");
 
-        // TODO (1.19)
         // Initialize a counter to number the anagram groups in the output.
         int groupCount = 0;
 
-        // TODO (1.20)
+
         // Create a StringBuilder to store the formatted output before saving to a file.
         StringBuilder groupContent = new StringBuilder();
 
         // Iterate over the grouped anagrams (values of the map).
         for (SinglyLinkedList group : groups.values()) {
 
-            // TODO (1.21)
             // Ensure the group is not null and contains words before printing.
             if (group != null && !group.isEmpty()) {
-            // a mix of ENSF 409 notes and chatGPT thaught me how to use these string functions
-                // TODO (1.22)
+            // a mix of ENSF 409 notes and chatGPT taught me how to use these string functions
+
                 // Format the group as a numbered entry and remove any extra spaces.
-                String formattedGroupContent = (groupCount + 1) + ": " + group.toString().replaceAll("\\s+", "");
+                String formattedGroupContent = (groupCount + 1) + ": " + group.toString().trim();
 
-
-                // TODO (1.23)
                 // Print the formatted group to the console.
                 System.out.println(formattedGroupContent);
 
-                // TODO (1.24)
                 // Append the formatted group to the output content for file saving.
                 groupContent.append(formattedGroupContent).append("\n");
 
-                // TODO (1.25)
                 // Increment the counter for the next group.
                 groupCount++;
 
@@ -172,30 +151,24 @@ class PA2 {
         // FILE OUTPUT HANDLING
         // ==========================
 
-        // TODO (1.26)
         // Save the final grouped anagrams to a text file with a modified filename based on the input file.
         String outputFileName = inputFileName.replace(".txt","_anagrams.txt");
 
-        // TODO (1.27)
         // Use try-with-resources to ensure BufferedWriter is closed automatically after writing.
         // Initialize BufferedWriter for writing to the output file.
-        // ChatGpt used here to explain what this means and why its done this way.
+        // ChatGpt used here to explain how to handle file output in this block and why its done this way.
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) { // ** YOUR CODE WHERE '?' **
 
-            // TODO (1.28)
             // Write the final grouped anagrams output to the specified file.
             writer.write(groupContent.toString());
 
-            // TODO (1.29)
             // Print a confirmation message indicating successful file saving.
             System.out.println("Saved to file \"" + outputFileName +"\" successfully");
 
-            // TODO (1.30)
             // Handle any IOException that may occur during file writing.
 
         } catch (IOException e) { // ** YOUR CODE WHERE '?' **
 
-            // TODO (1.31)
             // Print an error message to standard error (stderr) if file writing fails.
             System.err.println("An error occurred while writing to file \"" + outputFileName +"\"");
         }
@@ -203,7 +176,7 @@ class PA2 {
 }
 
 // ============================
-// TODO (2) MERGE SORT CLASS
+// MERGE SORT CLASS
 // ============================
 class MergeSort {
 
@@ -213,10 +186,9 @@ class MergeSort {
         // left represents the starting index of the current subarray 'array'.
         // right represents the ending index of the current subarray 'array'.
 
-        // TODO (2.1) If the subarray has at least two elements, then it can still be split further.
+        // If the subarray has at least two elements, then it can still be split further.
         if (left > right)  { // ** YOUR CODE WHERE '?' **
 
-            // TODO (2.2)
             // Calculate the middle index to divide the array into two halves.
             int middle = (left + right) / 2;
 
@@ -225,15 +197,12 @@ class MergeSort {
             System.out.println("( ................... )");
             System.out.println("Sorting subarray: " + Arrays.toString(Arrays.copyOfRange(array, left, right + 1)));
 
-            // TODO (2.3)
             // Recursively sort the left half of the array.
             mergeSort(array, left, middle);
 
-            // TODO (2.4)
             // Recursively sort the right half of the array.
             mergeSort(array, middle + 1, right);
 
-            // TODO (2.5)
             // Merge the sorted left and right halves.
             merge(array, left, middle, right);
         }
@@ -326,26 +295,23 @@ class MergeSort {
 }
 
 // ====================================
-// TODO (5) SINGLY LINKED LIST CLASS
+// SINGLY LINKED LIST CLASS
 // ====================================
 
 class SinglyLinkedList {
 
-    // TODO (5.1)
     // Declare a head node representing the start of the linked list
     private Node head;
 
-    // TODO (5.2)
     // Define the node structure for a singly linked list.
     private static class Node {
-        // TODO (5.2)
+
         // Store the Data (word) in this node
         String word;
 
         // Store the Pointer to the next node in the linked list
         Node next;
 
-        // TODO (5.3)
         // Constructor for Node in SinglyLinkedList. Creates a new linked list node containing a word.
         public Node(String word) {
             this.word = word;
@@ -449,10 +415,8 @@ public String toString() {
     return result.toString();
     }
 }
-
-
 // =======================================================
-// TODO (6) ANAGRAM GROUPER CLASS (with Insertion Sort)
+// ANAGRAM GROUPER CLASS (with Insertion Sort)
 //
 // Groups words into anagram groups using a LinkedHashMap
 // This method groups words that are anagrams of each other by mapping each word to a canonical form (a sorted version of its characters).
@@ -472,20 +436,15 @@ class AnagramGrouper {
 
     public static Map<String, SinglyLinkedList> groupAnagrams(String[] words) {
 
-        // TODO (6.1)
         // Store anagram groups while preserving insertion order
         Map<String, SinglyLinkedList> map = new LinkedHashMap<>();
 
-        // TODO (6.2)
         // Iterate through each word in the words array and processing them to group anagrams together.
         for (int i = 0; i < words.length; i++) {
 
-            // TODO (6.3)
             // Extract the current word from the words array
             String word = words[i];
 
-
-            // TODO (6.4)
             // Call computeCanonicalForm() to get sorted-character form of the word (anagram key)
             String canonicalForm = computeCanonicalForm(word);
 
@@ -521,15 +480,12 @@ class AnagramGrouper {
 
     private static String computeCanonicalForm(String word) {
 
-        // TODO (6.5)
         // Convert word into a character array
         char[] charArray = word.toCharArray();
 
-        // TODO (6.6)
         // Sort characters in-place calling insertion sort
         insertionSort(charArray);
 
-        // TODO (6.7)
         // Return the converted sorted character array back to a string
         return new String(charArray);
     }
@@ -546,15 +502,12 @@ class AnagramGrouper {
         System.out.println("=============================================");
         System.out.println(" ► Starting Insertion Sort on: " + Arrays.toString(arr));
 
-        // TODO (6.8)
         // Iterate over the array starting from index 1.
         for (int i = 1; i < arr.length; i++) {
 
-            // TODO (6.9)
             // Store the current element (`key`) to be inserted into the sorted section.
             char key = arr[i];
 
-            // TODO (6.10)
             // Initialize `j` to track the last element in the sorted portion of the array.
             int j = i - 1;
 
@@ -562,17 +515,14 @@ class AnagramGrouper {
             System.out.println("-----------------------------");
             System.out.println(" ↳  Inserting '" + key + "' into sorted portion: " + Arrays.toString(Arrays.copyOfRange(arr, 0, i)));
 
-            // TODO (6.11)
             // Iterate backwards through the sorted portion of the array:
             // Compare `key` with each element in the sorted section,
             // Shift elements that are greater than `key` to the right.
             while (j >= 0 && arr[j] > key) {
 
-                // TODO (6.12)
                 // Shift `arr[j]` one position to the right to create space for `key`.
                 arr[j + 1] = arr[j];
 
-                // TODO (6.13)
                 // Move `j` one step left to continue shifting process.
                 j--;
 
@@ -580,8 +530,7 @@ class AnagramGrouper {
                 System.out.println(" ⟲  Shifting " + Arrays.toString(arr));
             }
 
-            // TODO (6.14) Place `key` at its correct position after all shifts.
-
+            // Place `key` at its correct position after all shifts.
             arr[j + 1] = key;
 
             // Debugging: Show array state after inserting key

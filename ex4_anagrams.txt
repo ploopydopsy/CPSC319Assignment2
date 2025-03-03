@@ -1,87 +1,87 @@
-1: armmarram
-2: painterspantriespertainsrepaints
-3: diaperpairedrepaid
-4: tastertetrastreats
-5: artsratsstartars
-6: thickestthicketsthickset
-7: painterpertainrepaint
-8: auctionedcautionededucation
+1: arm mar ram
+2: painters pantries pertains repaints
+3: diaper paired repaid
+4: taster tetras treats
+5: arts rats star tars
+6: thickest thickets thickset
+7: painter pertain repaint
+8: auctioned cautioned education
 9: retests
 10: 3rd
-11: ascentsecantstance
-12: ritestierstirestries
-13: pestpetsstep
-14: deltaslastedslated
-15: bakerbrakebreak
-16: saintsatinstain
-17: areearera
+11: ascent secant stance
+12: rites tiers tires tries
+13: pest pets step
+14: deltas lasted slated
+15: baker brake break
+16: saint satin stain
+17: are ear era
 18: 9th
-19: asleepelapseplease
-20: realistretailssaltier
-21: pertnesspresentsserpents
-22: reignsresignsignersinger
-23: caretscastercaterscratesreactsrecasttraces
-24: asppassapspa
-25: cantersnectarsrecantsscantertrances
-26: direstdrieststride
-27: pacesspace
-28: restrainretrainsstrainerterrainstrainers
-29: canternectarrecanttrance
-30: recusedreducesrescuedsecured
-31: swaywaysyaws
-32: resetsteertersetrees
-33: weirdwiderwired
+19: asleep elapse please
+20: realist retails saltier
+21: pertness presents serpents
+22: reigns resign signer singer
+23: carets caster caters crates reacts recast traces
+24: asp pas sap spa
+25: canters nectars recants scanter trances
+26: direst driest stride
+27: paces space
+28: restrain retrains strainer terrains trainers
+29: canter nectar recant trance
+30: recused reduces rescued secured
+31: sway ways yaws
+32: reset steer terse trees
+33: weird wider wired
 34: 8th
-35: pitonpoint
-36: aspspasssapsspas
-37: rosiestsortiesstories
-38: desertdetersrested
-39: discounterintroducesreductions
-40: recuserescuesecure
-41: setterstreettester
-42: pistonpitonspoints
-43: callercellarrecall
-44: resortrostersorter
+35: piton point
+36: asps pass saps spas
+37: rosiest sorties stories
+38: desert deters rested
+39: discounter introduces reductions
+40: recuse rescue secure
+41: setter street tester
+42: piston pitons points
+43: caller cellar recall
+44: resort roster sorter
 45: 4th
-46: retrainterraintrainer
+46: retrain terrain trainer
 47: 5th
-48: rattlesstarletstartle
-49: pierspriesspire
-50: detourroutedtoured
-51: reinsresinrinserisensiren
-52: ascotcoastcoatstacos
-53: dietedittidetied
-54: peltssleptspelt
-55: rashessharesshears
-56: arrestrarestratersstarer
-57: calipersreplicasspiracle
-58: cateredcreatedreacted
-59: awlslawsslaw
-60: salvevalesveals
-61: detaildilatetailed
-62: pinessnipespine
-63: asterratesstaretasertears
-64: caretcatercratetrace
-65: artiststraittraits
+48: rattles starlet startle
+49: piers pries spire
+50: detour routed toured
+51: reins resin rinse risen siren
+52: ascot coast coats tacos
+53: diet edit tide tied
+54: pelts slept spelt
+55: rashes shares shears
+56: arrest rarest raters starer
+57: calipers replicas spiracle
+58: catered created reacted
+59: awls laws slaw
+60: salve vales veals
+61: detail dilate tailed
+62: pines snipe spine
+63: aster rates stare taser tears
+64: caret cater crate trace
+65: artist strait traits
 66: 1st
-67: assertastersstares
-68: pottersprotestspotter
+67: assert asters stares
+68: potters protest spotter
 69: acknowledge
 70: 2nd
-71: arcscarsscar
+71: arcs cars scar
 72: 6th
-73: archeschasersearch
+73: arches chaser search
 74: 7th
-75: aspireddespairdiaperspraised
-76: detainsinsteadsaintedstained
-77: ritetiertire
-78: ateeatetatea
-79: poresposerproseropesspore
-80: claimeddecimaldeclaimmedical
-81: presentrepentsserpent
-82: aridestastridestaidertardiestirades
+75: aspired despair diapers praised
+76: detains instead sainted stained
+77: rite tier tire
+78: ate eat eta tea
+79: pores poser prose ropes spore
+80: claimed decimal declaim medical
+81: present repents serpent
+82: aridest astride staider tardies tirades
 83: 10th
-84: rapsraspspar
-85: witherwrithe
-86: cidercrieddicer
-87: demodomemode
+84: raps rasp spar
+85: wither writhe
+86: cider cried dicer
+87: demo dome mode
