@@ -157,7 +157,7 @@ class PA2 {
         // Use try-with-resources to ensure BufferedWriter is closed automatically after writing.
         // Initialize BufferedWriter for writing to the output file.
         // ChatGpt used here to explain how to handle file output in this block and why its done this way.
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) { // ** YOUR CODE WHERE '?' **
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
 
             // Write the final grouped anagrams output to the specified file.
             writer.write(groupContent.toString());
@@ -167,7 +167,7 @@ class PA2 {
 
             // Handle any IOException that may occur during file writing.
 
-        } catch (IOException e) { // ** YOUR CODE WHERE '?' **
+        } catch (IOException e) {
 
             // Print an error message to standard error (stderr) if file writing fails.
             System.err.println("An error occurred while writing to file \"" + outputFileName +"\"");
@@ -187,7 +187,7 @@ class MergeSort {
         // right represents the ending index of the current subarray 'array'.
 
         // If the subarray has at least two elements, then it can still be split further.
-        if (left > right)  { // ** YOUR CODE WHERE '?' **
+        if (left >= right)  {
 
             // Calculate the middle index to divide the array into two halves.
             int middle = (left + right) / 2;
@@ -377,7 +377,7 @@ public String toString() {
     Node current = head;
 
     // Traverse the entire linked list
-    while (current != null) { // ** YOUR CODE WHERE '?' **
+    while (current != null) {
 
         // Append the current node's data to the string
         result.append(current.word);
